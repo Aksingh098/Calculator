@@ -15,6 +15,7 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.BasicTextField
 import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
@@ -106,8 +107,10 @@ fun numpad() {
 
     ) {
         Row(
-            modifier = Modifier.padding(20.dp),
-            Arrangement.SpaceBetween
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(11.dp),
+           horizontalArrangement = Arrangement.SpaceBetween
         ) {
             Button(
                 onClick = { /*TODO*/ },
@@ -116,7 +119,7 @@ fun numpad() {
 
             ) {
                 Text(text = "AC",
-                    fontSize = 25.sp)
+                    fontSize = 20.sp)
 
             }
             Spacer(modifier = Modifier.width(10.dp))
@@ -134,6 +137,7 @@ fun numpad() {
                 onClick = { /*TODO*/ },
                 shape = CircleShape,
                 modifier = Modifier.size(85.dp)
+
             ) {
                 Text(text = "⌫",
                     fontSize = 30.sp)
@@ -152,13 +156,20 @@ fun numpad() {
             }
         }
         Row(
-            modifier = Modifier.padding(20.dp),
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(11.dp),
             Arrangement.SpaceBetween
         ) {
             Button(
                 onClick = { /*TODO*/ },
                 shape = CircleShape,
-                modifier = Modifier.size(85.dp)
+                modifier = Modifier.size(85.dp),
+                colors = ButtonDefaults.buttonColors(
+                    containerColor =Color(0xFFD3D3D3),
+                    contentColor = Color.Black
+
+                )
 
             ) {
                 Text(text = "7",
@@ -169,7 +180,12 @@ fun numpad() {
             Button(
                 onClick = { /*TODO*/ },
                 shape = CircleShape,
-                modifier = Modifier.size(85.dp)
+                modifier = Modifier.size(85.dp),
+                colors = ButtonDefaults.buttonColors(
+                    containerColor =Color(0xFFD3D3D3),
+                    contentColor = Color.Black
+
+                )
             ) {
                 Text(text = "8",
                     fontSize = 30.sp)
@@ -179,7 +195,12 @@ fun numpad() {
             Button(
                 onClick = { /*TODO*/ },
                 shape = CircleShape,
-                modifier = Modifier.size(85.dp)
+                modifier = Modifier.size(85.dp),
+                colors = ButtonDefaults.buttonColors(
+                    containerColor =Color(0xFFD3D3D3),
+                    contentColor = Color.Black
+
+                )
             ) {
                 Text(text = "9",
                     fontSize = 30.sp)
@@ -197,13 +218,20 @@ fun numpad() {
             }
         }
         Row(
-            modifier = Modifier.padding(20.dp),
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(11.dp),
             Arrangement.SpaceBetween
         ) {
             Button(
                 onClick = { /*TODO*/ },
                 shape = CircleShape,
-                modifier = Modifier.size(85.dp)
+                modifier = Modifier.size(85.dp),
+                colors = ButtonDefaults.buttonColors(
+                    containerColor =Color(0xFFD3D3D3),
+                    contentColor = Color.Black
+
+                )
 
             ) {
                 Text(text = "4",
@@ -215,7 +243,12 @@ fun numpad() {
             Button(
                 onClick = { /*TODO*/ },
                 shape = CircleShape,
-                modifier = Modifier.size(85.dp)
+                modifier = Modifier.size(85.dp),
+                colors = ButtonDefaults.buttonColors(
+                    containerColor =Color(0xFFD3D3D3),
+                    contentColor = Color.Black
+
+                )
             ) {
                 Text(text = "5",
                     fontSize = 30.sp)
@@ -225,7 +258,12 @@ fun numpad() {
             Button(
                 onClick = { /*TODO*/ },
                 shape = CircleShape,
-                modifier = Modifier.size(85.dp)
+                modifier = Modifier.size(85.dp),
+                colors = ButtonDefaults.buttonColors(
+                    containerColor =Color(0xFFD3D3D3),
+                    contentColor = Color.Black
+
+                )
             ) {
                 Text(text = "6",
                     fontSize = 30.sp)
@@ -243,13 +281,20 @@ fun numpad() {
             }
         }
         Row(
-            modifier = Modifier.padding(20.dp),
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(11.dp),
             Arrangement.SpaceBetween
         ) {
             Button(
                 onClick = { /*TODO*/ },
                 shape = CircleShape,
-                modifier = Modifier.size(85.dp)
+                modifier = Modifier.size(85.dp),
+                colors = ButtonDefaults.buttonColors(
+                    containerColor =Color(0xFFD3D3D3),
+                    contentColor = Color.Black
+
+                )
 
             ) {
                 Text(text = "1",
@@ -260,7 +305,12 @@ fun numpad() {
             Button(
                 onClick = { /*TODO*/ },
                 shape = CircleShape,
-                modifier = Modifier.size(85.dp)
+                modifier = Modifier.size(85.dp),
+                colors = ButtonDefaults.buttonColors(
+                    containerColor =Color(0xFFD3D3D3),
+                    contentColor = Color.Black
+
+                )
             ) {
                 Text(text = "2",
                     fontSize = 30.sp)
@@ -270,7 +320,12 @@ fun numpad() {
             Button(
                 onClick = { /*TODO*/ },
                 shape = CircleShape,
-                modifier = Modifier.size(85.dp)
+                modifier = Modifier.size(85.dp),
+                colors = ButtonDefaults.buttonColors(
+                    containerColor =Color(0xFFD3D3D3),
+                    contentColor = Color.Black
+
+                )
             ) {
                 Text(text = "3",
                     fontSize = 30.sp)
@@ -283,6 +338,71 @@ fun numpad() {
                 modifier = Modifier.size(85.dp)
             ) {
                 Text(text = "+",
+                    fontSize = 40.sp)
+
+            }
+        }
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(11.dp),
+            Arrangement.SpaceBetween
+        ) {
+            Button(
+                onClick = { /*TODO*/ },
+                shape = CircleShape,
+                modifier = Modifier.size(85.dp),
+                colors = ButtonDefaults.buttonColors(
+                    containerColor =Color(0xFFD3D3D3),
+                    contentColor = Color.Black
+
+                )
+
+            ) {
+                Text(text = "00",
+                    fontSize = 30.sp)
+
+            }
+            Spacer(modifier = Modifier.width(10.dp))
+            Button(
+                onClick = { /*TODO*/ },
+                shape = CircleShape,
+                modifier = Modifier.size(85.dp),
+                colors = ButtonDefaults.buttonColors(
+                    containerColor =Color(0xFFD3D3D3),
+                    contentColor = Color.Black
+
+                )
+            ) {
+                Text(text = "0",
+                    fontSize = 30.sp)
+
+            }
+            Spacer(modifier = Modifier.width(10.dp))
+            Button(
+                onClick = { /*TODO*/ },
+                shape = CircleShape,
+                modifier = Modifier.size(85.dp),
+                colors = ButtonDefaults.buttonColors(
+                    containerColor =Color(0xFFD3D3D3),
+                    contentColor = Color.Black
+
+                )
+            ) {
+                Text(text = ".",
+                    fontSize = 50.sp)
+
+            }
+            Spacer(modifier = Modifier.width(10.dp))
+            Button(
+                onClick = { /*TODO*/ },
+                shape = CircleShape,
+                modifier = Modifier.size(85.dp),
+                colors = ButtonDefaults.buttonColors(
+                    containerColor =Color(0xFFFFA500)
+                )
+            ) {
+                Text(text = "=",
                     fontSize = 40.sp)
 
             }
