@@ -17,6 +17,7 @@ import androidx.compose.foundation.text.BasicTextField
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.material3.TextFieldColors
@@ -38,69 +39,59 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
 
-@Composable
-fun mainScreen() {
-    var toCalculate by remember { mutableStateOf("") }
 
-
-    calculateDisplay(
-        toCalculate = toCalculate,
-        onCalcChange = { toCalculate = it }
-
-
-    )
-
-}
 
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun calculateDisplay(
-    toCalculate: String,
-    onCalcChange: (String) -> Unit
-
-
-) {
+fun calculateDisplay() {
 
     Column(
         modifier = Modifier.fillMaxWidth(),
         verticalArrangement = Arrangement.Center
     ) {
+        val colorScheme = MaterialTheme.colorScheme
+        var expression by remember { mutableStateOf("alfj") }
+        var result by remember { mutableStateOf("aklfjhka") }
+
+        Spacer(modifier = Modifier.height(250.dp))
+
+
+       Text(
+           text = expression,
+           maxLines = 1,
+           textAlign = TextAlign.End,
+           fontSize = 40.sp,
+           fontWeight = FontWeight.Bold,
+           color = colorScheme.onSurface,
+           overflow = TextOverflow.Ellipsis
+           )
+        //Spacer(modifier = Modifier.height(10.dp))
         Text(
-            text = "Calculator",
-            modifier = Modifier.fillMaxWidth(),
-            textAlign = TextAlign.Center,
-            fontSize = 30.sp
-
-        )
-        BasicTextField(
-            value = toCalculate,
-            onValueChange = onCalcChange,
-            modifier = Modifier
-                .padding(top = 50.dp, start = 4.dp)
-                .height(200.dp),
-            textStyle = TextStyle(
-                fontSize = 50.sp,
-                fontWeight = FontWeight.Bold,
-                textAlign = TextAlign.Right
-//                overflow = TextOverflow.Ellipsis
-            ),
+            text =result,
             maxLines = 1,
-
-
+            textAlign = TextAlign.End,
+            fontSize = 28.sp,
+            color = colorScheme.onSurfaceVariant,
+            overflow = TextOverflow.Ellipsis
             )
 
 
 
-        Spacer(modifier = Modifier.height(20.dp))
-        numpad()
+
+
+        numpad(onSymbolClick = {}
+
+        )
 
     }
 }
 
 
 @Composable
-fun numpad() {
+fun numpad(
+    onSymbolClick: (String) -> Unit
+) {
     Column(
         modifier = Modifier.fillMaxWidth(),
         verticalArrangement = Arrangement.Center
@@ -113,7 +104,7 @@ fun numpad() {
            horizontalArrangement = Arrangement.SpaceBetween
         ) {
             Button(
-                onClick = { /*TODO*/ },
+                onClick = { onSymbolClick("AC") },
                 shape = CircleShape,
                 modifier = Modifier.size(85.dp)
 
@@ -124,7 +115,7 @@ fun numpad() {
             }
             Spacer(modifier = Modifier.width(10.dp))
             Button(
-                onClick = { /*TODO*/ },
+                onClick = { onSymbolClick("%") },
                 shape = CircleShape,
                 modifier = Modifier.size(85.dp)
             ) {
@@ -134,7 +125,7 @@ fun numpad() {
             }
             Spacer(modifier = Modifier.width(10.dp))
             Button(
-                onClick = { /*TODO*/ },
+                onClick = { onSymbolClick("⌫") },
                 shape = CircleShape,
                 modifier = Modifier.size(85.dp)
 
@@ -145,7 +136,7 @@ fun numpad() {
             }
             Spacer(modifier = Modifier.width(10.dp))
             Button(
-                onClick = { /*TODO*/ },
+                onClick = { onSymbolClick("/") },
                 shape = CircleShape,
                 modifier = Modifier.size(85.dp)
             ) {
@@ -162,7 +153,7 @@ fun numpad() {
             Arrangement.SpaceBetween
         ) {
             Button(
-                onClick = { /*TODO*/ },
+                onClick = { onSymbolClick("7") },
                 shape = CircleShape,
                 modifier = Modifier.size(85.dp),
                 colors = ButtonDefaults.buttonColors(
@@ -178,7 +169,7 @@ fun numpad() {
             }
             Spacer(modifier = Modifier.width(10.dp))
             Button(
-                onClick = { /*TODO*/ },
+                onClick = { onSymbolClick("8") },
                 shape = CircleShape,
                 modifier = Modifier.size(85.dp),
                 colors = ButtonDefaults.buttonColors(
@@ -193,7 +184,7 @@ fun numpad() {
             }
             Spacer(modifier = Modifier.width(10.dp))
             Button(
-                onClick = { /*TODO*/ },
+                onClick = { onSymbolClick("9") },
                 shape = CircleShape,
                 modifier = Modifier.size(85.dp),
                 colors = ButtonDefaults.buttonColors(
@@ -208,7 +199,7 @@ fun numpad() {
             }
             Spacer(modifier = Modifier.width(10.dp))
             Button(
-                onClick = { /*TODO*/ },
+                onClick = { onSymbolClick("*") },
                 shape = CircleShape,
                 modifier = Modifier.size(85.dp)
             ) {
@@ -224,7 +215,7 @@ fun numpad() {
             Arrangement.SpaceBetween
         ) {
             Button(
-                onClick = { /*TODO*/ },
+                onClick = { onSymbolClick("4") },
                 shape = CircleShape,
                 modifier = Modifier.size(85.dp),
                 colors = ButtonDefaults.buttonColors(
@@ -241,7 +232,7 @@ fun numpad() {
             }
             Spacer(modifier = Modifier.width(10.dp))
             Button(
-                onClick = { /*TODO*/ },
+                onClick = { onSymbolClick("5") },
                 shape = CircleShape,
                 modifier = Modifier.size(85.dp),
                 colors = ButtonDefaults.buttonColors(
@@ -256,7 +247,7 @@ fun numpad() {
             }
             Spacer(modifier = Modifier.width(10.dp))
             Button(
-                onClick = { /*TODO*/ },
+                onClick = { onSymbolClick("6") },
                 shape = CircleShape,
                 modifier = Modifier.size(85.dp),
                 colors = ButtonDefaults.buttonColors(
@@ -271,7 +262,7 @@ fun numpad() {
             }
             Spacer(modifier = Modifier.width(10.dp))
             Button(
-                onClick = { /*TODO*/ },
+                onClick = { onSymbolClick("-") },
                 shape = CircleShape,
                 modifier = Modifier.size(85.dp)
             ) {
@@ -287,7 +278,7 @@ fun numpad() {
             Arrangement.SpaceBetween
         ) {
             Button(
-                onClick = { /*TODO*/ },
+                onClick = { onSymbolClick("1") },
                 shape = CircleShape,
                 modifier = Modifier.size(85.dp),
                 colors = ButtonDefaults.buttonColors(
@@ -303,7 +294,7 @@ fun numpad() {
             }
             Spacer(modifier = Modifier.width(10.dp))
             Button(
-                onClick = { /*TODO*/ },
+                onClick = { onSymbolClick("2") },
                 shape = CircleShape,
                 modifier = Modifier.size(85.dp),
                 colors = ButtonDefaults.buttonColors(
@@ -318,7 +309,7 @@ fun numpad() {
             }
             Spacer(modifier = Modifier.width(10.dp))
             Button(
-                onClick = { /*TODO*/ },
+                onClick = { onSymbolClick("3") },
                 shape = CircleShape,
                 modifier = Modifier.size(85.dp),
                 colors = ButtonDefaults.buttonColors(
@@ -333,7 +324,7 @@ fun numpad() {
             }
             Spacer(modifier = Modifier.width(10.dp))
             Button(
-                onClick = { /*TODO*/ },
+                onClick = { onSymbolClick("+") },
                 shape = CircleShape,
                 modifier = Modifier.size(85.dp)
             ) {
@@ -349,7 +340,7 @@ fun numpad() {
             Arrangement.SpaceBetween
         ) {
             Button(
-                onClick = { /*TODO*/ },
+                onClick = { onSymbolClick("00") },
                 shape = CircleShape,
                 modifier = Modifier.size(85.dp),
                 colors = ButtonDefaults.buttonColors(
@@ -365,7 +356,7 @@ fun numpad() {
             }
             Spacer(modifier = Modifier.width(10.dp))
             Button(
-                onClick = { /*TODO*/ },
+                onClick = { onSymbolClick("0") },
                 shape = CircleShape,
                 modifier = Modifier.size(85.dp),
                 colors = ButtonDefaults.buttonColors(
@@ -380,7 +371,7 @@ fun numpad() {
             }
             Spacer(modifier = Modifier.width(10.dp))
             Button(
-                onClick = { /*TODO*/ },
+                onClick = { onSymbolClick(".") },
                 shape = CircleShape,
                 modifier = Modifier.size(85.dp),
                 colors = ButtonDefaults.buttonColors(
@@ -395,7 +386,7 @@ fun numpad() {
             }
             Spacer(modifier = Modifier.width(10.dp))
             Button(
-                onClick = { /*TODO*/ },
+                onClick = { onSymbolClick("=") },
                 shape = CircleShape,
                 modifier = Modifier.size(85.dp),
                 colors = ButtonDefaults.buttonColors(
