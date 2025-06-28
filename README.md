@@ -20,4 +20,4 @@ A basic calculator app built using **Jetpack Compose** with a custom UI and nump
 - exp4j (for expression evaluation)
 
 ##  Author 
-First self-built Compose project ✅
+First self-built Compose project 
