@@ -52,6 +52,8 @@ android {
 dependencies {
     // Google Fonts support
     implementation("androidx.compose.ui:ui-text-google-fonts")
+    //for calculation
+    implementation ("net.objecthunter:exp4j:0.4.8")
 
 
     implementation("androidx.compose.ui:ui-text-google-fonts:1.8.2")
